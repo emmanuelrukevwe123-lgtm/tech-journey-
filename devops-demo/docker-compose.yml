@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # We name our service 'api'
+  api:
+    # Instead of pulling a pre-made image, we tell it to build using the Dockerfile (.)
+    build: .
+    # We define the port mapping just like '-p 8000:8000'
+    ports:
+      - "8000:8000"
+    # An awesome feature: We "mount" our local code into the container.
+    # This means if you change code on your laptop, the container sees it immediately!
+    volumes:
+      - .:/app
+    environment:
+      - ENVIRONMENT=development

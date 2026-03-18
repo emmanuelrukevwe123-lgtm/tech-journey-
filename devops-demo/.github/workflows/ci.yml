@@ -1,0 +1,33 @@
+name: Continuous Integration
+
+# 1. When should this run? Every time someone pushes to the 'main' branch.
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# 2. What should it do? We define "jobs"
+jobs:
+  test:
+    # 3. What kind of server should GitHub spin up to run our tests?
+    runs-on: ubuntu-latest
+
+    # 4. Step-by-step instructions for the server
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Pytest
+      run: |
+        PYTHONPATH=. pytest
