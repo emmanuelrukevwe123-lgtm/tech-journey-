@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neighbourhood Borrow Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🏘️</span>
+        <div>
+          <h1>Borrow Board</h1>
+          <p class="tagline">Your neighbourhood mini library</p>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="openAddModal">+ List an Item</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="controls">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search items..." />
+      </div>
+      <div class="filters">
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Tools">Tools</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Garden">Garden</option>
+          <option value="Outdoor">Outdoor</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Sports">Sports</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="availabilityFilter">
+          <option value="">All Items</option>
+          <option value="true">Available</option>
+          <option value="false">Borrowed</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="stats" id="statsBar"></div>
+
+    <div class="grid" id="itemsGrid"></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <span>📦</span>
+      <p>No items found. Be the first to list something!</p>
+    </div>
+  </main>
+
+  <!-- Add Item Modal -->
+  <div class="modal-overlay" id="addModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>List an Item</h2>
+        <button class="close-btn" data-close="addModal">&times;</button>
+      </div>
+      <form id="addItemForm">
+        <label>Item Name <span class="required">*</span>
+          <input type="text" name="name" placeholder="e.g. Cordless Drill" required />
+        </label>
+        <label>Category <span class="required">*</span>
+          <select name="category" required>
+            <option value="">Select a category</option>
+            <option value="Tools">Tools</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Garden">Garden</option>
+            <option value="Outdoor">Outdoor</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Sports">Sports</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>Your Name / House No. <span class="required">*</span>
+          <input type="text" name="owner" placeholder="e.g. Alice (No. 12)" required />
+        </label>
+        <label>Description
+          <textarea name="description" placeholder="Any useful details about the item..." rows="3"></textarea>
+        </label>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close="addModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Borrow Modal -->
+  <div class="modal-overlay" id="borrowModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Borrow Item</h2>
+        <button class="close-btn" data-close="borrowModal">&times;</button>
+      </div>
+      <p id="borrowItemName" class="borrow-item-label"></p>
+      <form id="borrowForm">
+        <input type="hidden" id="borrowItemId" />
+        <label>Your Name / House No. <span class="required">*</span>
+          <input type="text" id="borrowerName" placeholder="e.g. Sara (No. 9)" required />
+        </label>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close="borrowModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm Borrow</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

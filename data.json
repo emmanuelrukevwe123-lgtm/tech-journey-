@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Cordless Drill",
+      "category": "Tools",
+      "owner": "Alice (No. 12)",
+      "description": "DeWalt 20V, comes with a bit set.",
+      "available": true,
+      "borrowedBy": null,
+      "createdAt": "2026-04-03T18:00:04.693Z"
+    },
+    {
+      "id": 2,
+      "name": "Ladder (6ft)",
+      "category": "Tools",
+      "owner": "Bob (No. 7)",
+      "description": "Aluminium step ladder, good condition.",
+      "available": true,
+      "borrowedBy": null,
+      "createdAt": "2026-04-03T18:00:04.693Z"
+    },
+    {
+      "id": 3,
+      "name": "Cake Tin Set",
+      "category": "Kitchen",
+      "owner": "Maria (No. 3)",
+      "description": "Set of 3 non-stick round tins.",
+      "available": false,
+      "borrowedBy": "manuel/90",
+      "createdAt": "2026-04-03T18:00:04.693Z"
+    },
+    {
+      "id": 4,
+      "name": "Pressure Washer",
+      "category": "Garden",
+      "owner": "Tom (No. 15)",
+      "description": "Karcher K2, great for driveways and patios.",
+      "available": true,
+      "borrowedBy": null,
+      "createdAt": "2026-04-03T18:00:04.693Z"
+    },
+    {
+      "id": 5,
+      "name": "Tent (4-person)",
+      "category": "Outdoor",
+      "owner": "Jess (No. 21)",
+      "description": "Coleman 4-man dome tent, barely used.",
+      "available": true,
+      "borrowedBy": null,
+      "createdAt": "2026-04-03T18:00:04.693Z"
+    },
+    {
+      "id": 6,
+      "name": "A Football",
+      "category": "Sports",
+      "owner": "Emmanuel/89",
+      "description": "A size 5 health football",
+      "available": true,
+      "borrowedBy": null,
+      "createdAt": "2026-04-03T18:01:21.431Z"
+    }
+  ],
+  "nextId": 7
+}
